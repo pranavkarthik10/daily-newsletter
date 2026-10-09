@@ -1,0 +1,28 @@
+{
+  "_example": true,
+  "updated_at": "-10m",
+  "ok": true,
+  "provider": "google",
+  "calendar": "Example calendar",
+  "timeZone": "America/New_York",
+  "events": [
+    {
+      "title": "Example: Design review",
+      "start": "-30m",
+      "end": "+45m",
+      "all_day": false,
+      "location": "Studio",
+      "link": "https://example.com/cal/design",
+      "tentative": false
+    },
+    {
+      "title": "Example: Press check",
+      "start": "+26h",
+      "end": "+27h",
+      "all_day": false,
+      "location": "Newsroom",
+      "link": "https://example.com/cal/press",
+      "tentative": true
+    }
+  ]
+}

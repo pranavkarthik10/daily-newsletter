@@ -1,0 +1,647 @@
+{
+  "_example": true,
+  "hn": {
+    "name": "Hacker News",
+    "items": [
+      {
+        "title": "Cloudflare acquires Deno",
+        "url": "https://blog.cloudflare.com/",
+        "domain": "blog.cloudflare.com",
+        "points": 705,
+        "comments": 383,
+        "discuss": "https://example.com/hn/72664",
+        "summary": "Putting ourselves in the best place to build the future of the web",
+        "published": "-1h"
+      },
+      {
+        "title": "Our $445M Series D",
+        "url": "https://oxide.computer/",
+        "domain": "oxide.computer",
+        "points": 382,
+        "comments": 155,
+        "discuss": "https://example.com/hn/74195",
+        "summary": null,
+        "published": "-2h"
+      },
+      {
+        "title": "Sorry, I'm in a meeting",
+        "url": "https://iminafleeting.com/",
+        "domain": "iminafleeting.com",
+        "points": 477,
+        "comments": 167,
+        "discuss": "https://example.com/hn/70383",
+        "summary": null,
+        "published": "-4h"
+      },
+      {
+        "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+        "url": "https://github.com/",
+        "domain": "github.com",
+        "points": 305,
+        "comments": 128,
+        "discuss": "https://example.com/hn/57770",
+        "summary": null,
+        "published": "-5h"
+      },
+      {
+        "title": "Nobel Peace Prize for 2026 to Navanethem Pillay",
+        "url": "https://www.nobelprize.org/",
+        "domain": "nobelprize.org",
+        "points": 332,
+        "comments": 166,
+        "discuss": "https://example.com/hn/87151",
+        "summary": null,
+        "published": "-6h"
+      },
+      {
+        "title": "A small language that compiles before the coffee cools",
+        "url": "https://example.com/example/hn/compiler",
+        "domain": "example.com",
+        "points": 214,
+        "comments": 88,
+        "discuss": "https://example.com/hn/54812",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-8h"
+      },
+      {
+        "title": "The case for boring deploy scripts",
+        "url": "https://example.com/example/hn/deploy",
+        "domain": "example.com",
+        "points": 176,
+        "comments": 64,
+        "discuss": "https://example.com/hn/14418",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-9h"
+      },
+      {
+        "title": "Show HN: a paper startpage you can print from a bot",
+        "url": "https://example.com/example/hn/paper",
+        "domain": "example.com",
+        "points": 151,
+        "comments": 42,
+        "discuss": "https://example.com/hn/11936",
+        "summary": null,
+        "published": "-11h"
+      },
+      {
+        "title": "Why your RSS reader still matters",
+        "url": "https://example.com/example/hn/rss",
+        "domain": "example.com",
+        "points": 129,
+        "comments": 37,
+        "discuss": "https://example.com/hn/40784",
+        "summary": null,
+        "published": "-12h"
+      },
+      {
+        "title": "Notes on self-hosting fonts",
+        "url": "https://example.com/example/hn/fonts",
+        "domain": "example.com",
+        "points": 98,
+        "comments": 21,
+        "discuss": "https://example.com/hn/87158",
+        "summary": null,
+        "published": "-14h"
+      },
+      {
+        "title": "A field guide to static deploys",
+        "url": "https://example.com/example/hn/static",
+        "domain": "example.com",
+        "points": 87,
+        "comments": 19,
+        "discuss": "https://example.com/hn/48081",
+        "summary": null,
+        "published": "-16h"
+      },
+      {
+        "title": "The morning edition problem",
+        "url": "https://example.com/example/hn/morning",
+        "domain": "example.com",
+        "points": 76,
+        "comments": 15,
+        "discuss": "https://example.com/hn/8003",
+        "summary": null,
+        "published": "-18h"
+      }
+    ]
+  },
+  "ars": {
+    "name": "Ars Technica",
+    "items": [
+      {
+        "title": "Microsoft barred from sponsoring foreign workers for US residency",
+        "url": "https://example.com/example/microsoft-visas",
+        "summary": "A federal ruling cuts off a visa path several large technology employers had been using.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Ars desk note 1",
+        "url": "https://example.com/example/ars/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Ars desk note 2",
+        "url": "https://example.com/example/ars/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "bbgtech": {
+    "name": "Bloomberg Technology",
+    "items": [
+      {
+        "title": "Chip supply steadies as the week's orders clear",
+        "url": "https://example.com/example/chips",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Bloomberg Technology desk note 1",
+        "url": "https://example.com/example/bloomberg-technology/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Bloomberg Technology desk note 2",
+        "url": "https://example.com/example/bloomberg-technology/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "techcrunch": {
+    "name": "TechCrunch",
+    "items": [
+      {
+        "title": "A quieter funding tape, with a few loud exceptions",
+        "url": "https://example.com/example/tape",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "TechCrunch desk note 1",
+        "url": "https://example.com/example/techcrunch/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "TechCrunch desk note 2",
+        "url": "https://example.com/example/techcrunch/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "verge": {
+    "name": "The Verge",
+    "items": [
+      {
+        "title": "Browsers grow a sidebar for the agent's morning",
+        "url": "https://example.com/example/browsers",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "The Verge desk note 1",
+        "url": "https://example.com/example/the-verge/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "The Verge desk note 2",
+        "url": "https://example.com/example/the-verge/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "wired": {
+    "name": "Wired",
+    "items": [
+      {
+        "title": "Wired desk note 1",
+        "url": "https://example.com/example/wired/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Wired desk note 2",
+        "url": "https://example.com/example/wired/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Wired desk note 3",
+        "url": "https://example.com/example/wired/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "mittr": {
+    "name": "MIT Technology Review",
+    "items": [
+      {
+        "title": "MIT Technology Review desk note 1",
+        "url": "https://example.com/example/mit-technology-review/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "MIT Technology Review desk note 2",
+        "url": "https://example.com/example/mit-technology-review/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "MIT Technology Review desk note 3",
+        "url": "https://example.com/example/mit-technology-review/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "simonw": {
+    "name": "Simon Willison",
+    "items": [
+      {
+        "title": "Simon Willison desk note 1",
+        "url": "https://example.com/example/simon-willison/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Simon Willison desk note 2",
+        "url": "https://example.com/example/simon-willison/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Simon Willison desk note 3",
+        "url": "https://example.com/example/simon-willison/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "openai": {
+    "name": "OpenAI News",
+    "items": [
+      {
+        "title": "OpenAI News desk note 1",
+        "url": "https://example.com/example/openai-news/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "OpenAI News desk note 2",
+        "url": "https://example.com/example/openai-news/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "OpenAI News desk note 3",
+        "url": "https://example.com/example/openai-news/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "googleai": {
+    "name": "Google AI Blog",
+    "items": [
+      {
+        "title": "Google AI Blog desk note 1",
+        "url": "https://example.com/example/google-ai-blog/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Google AI Blog desk note 2",
+        "url": "https://example.com/example/google-ai-blog/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Google AI Blog desk note 3",
+        "url": "https://example.com/example/google-ai-blog/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "hfpapers": {
+    "name": "Hugging Face Papers",
+    "items": [
+      {
+        "title": "Hugging Face Papers desk note 1",
+        "url": "https://example.com/example/hugging-face-papers/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com",
+        "points": 40,
+        "comments": 10,
+        "discuss": "https://example.com/example/hugging-face-papers/1"
+      },
+      {
+        "title": "Hugging Face Papers desk note 2",
+        "url": "https://example.com/example/hugging-face-papers/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com",
+        "points": 33,
+        "comments": 9,
+        "discuss": "https://example.com/example/hugging-face-papers/2"
+      },
+      {
+        "title": "Hugging Face Papers desk note 3",
+        "url": "https://example.com/example/hugging-face-papers/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com",
+        "points": 26,
+        "comments": 8,
+        "discuss": "https://example.com/example/hugging-face-papers/3"
+      }
+    ]
+  },
+  "arxiv": {
+    "name": "arXiv cs.AI",
+    "items": [
+      {
+        "title": "arXiv cs.AI desk note 1",
+        "url": "https://example.com/example/arxiv-cs.ai/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "arXiv cs.AI desk note 2",
+        "url": "https://example.com/example/arxiv-cs.ai/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "arXiv cs.AI desk note 3",
+        "url": "https://example.com/example/arxiv-cs.ai/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      },
+      {
+        "title": "arXiv cs.AI desk note 4",
+        "url": "https://example.com/example/arxiv-cs.ai/4",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-5h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "lobsters": {
+    "name": "Lobsters",
+    "items": [
+      {
+        "title": "Lobsters desk note 1",
+        "url": "https://example.com/example/lobsters/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com",
+        "points": 40,
+        "comments": 10,
+        "discuss": "https://example.com/example/lobsters/1"
+      },
+      {
+        "title": "Lobsters desk note 2",
+        "url": "https://example.com/example/lobsters/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com",
+        "points": 33,
+        "comments": 9,
+        "discuss": "https://example.com/example/lobsters/2"
+      },
+      {
+        "title": "Lobsters desk note 3",
+        "url": "https://example.com/example/lobsters/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com",
+        "points": 26,
+        "comments": 8,
+        "discuss": "https://example.com/example/lobsters/3"
+      }
+    ]
+  },
+  "ghtrending": {
+    "name": "GitHub Trending",
+    "items": [
+      {
+        "title": "GitHub Trending desk note 1",
+        "url": "https://example.com/example/github-trending/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "GitHub Trending desk note 2",
+        "url": "https://example.com/example/github-trending/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "GitHub Trending desk note 3",
+        "url": "https://example.com/example/github-trending/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "githubblog": {
+    "name": "The GitHub Blog",
+    "items": [
+      {
+        "title": "The GitHub Blog desk note 1",
+        "url": "https://example.com/example/the-github-blog/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "The GitHub Blog desk note 2",
+        "url": "https://example.com/example/the-github-blog/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "The GitHub Blog desk note 3",
+        "url": "https://example.com/example/the-github-blog/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "changelog": {
+    "name": "Changelog",
+    "items": [
+      {
+        "title": "Changelog desk note 1",
+        "url": "https://example.com/example/changelog/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Changelog desk note 2",
+        "url": "https://example.com/example/changelog/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Changelog desk note 3",
+        "url": "https://example.com/example/changelog/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "bbgmarkets": {
+    "name": "Bloomberg Markets",
+    "items": [
+      {
+        "title": "Bloomberg Markets desk note 1",
+        "url": "https://example.com/example/bloomberg-markets/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Bloomberg Markets desk note 2",
+        "url": "https://example.com/example/bloomberg-markets/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Bloomberg Markets desk note 3",
+        "url": "https://example.com/example/bloomberg-markets/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "cnbctech": {
+    "name": "CNBC Tech",
+    "items": [
+      {
+        "title": "CNBC Tech desk note 1",
+        "url": "https://example.com/example/cnbc-tech/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "CNBC Tech desk note 2",
+        "url": "https://example.com/example/cnbc-tech/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "CNBC Tech desk note 3",
+        "url": "https://example.com/example/cnbc-tech/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "cnbcbiz": {
+    "name": "CNBC Business",
+    "items": [
+      {
+        "title": "CNBC Business desk note 1",
+        "url": "https://example.com/example/cnbc-business/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "CNBC Business desk note 2",
+        "url": "https://example.com/example/cnbc-business/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "CNBC Business desk note 3",
+        "url": "https://example.com/example/cnbc-business/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  },
+  "ft": {
+    "name": "Financial Times",
+    "items": [
+      {
+        "title": "Financial Times desk note 1",
+        "url": "https://example.com/example/financial-times/1",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-2h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Financial Times desk note 2",
+        "url": "https://example.com/example/financial-times/2",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-3h",
+        "domain": "example.com"
+      },
+      {
+        "title": "Financial Times desk note 3",
+        "url": "https://example.com/example/financial-times/3",
+        "summary": "Example dispatch for the offline preview.",
+        "published": "-4h",
+        "domain": "example.com"
+      }
+    ]
+  }
+}

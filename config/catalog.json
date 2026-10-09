@@ -1,0 +1,135 @@
+{
+  "_doc": "Suggested public sources, grouped so a bot can offer them during setup. Copy a feed object into newsletter.config.json feeds and add its id to a section. Nothing here is enabled until it is copied. X queries and accounts are starting points for the X connector, not a requirement to follow anyone.",
+  "interests": [
+    {
+      "id": "ai",
+      "name": "AI",
+      "blurb": "Lab blogs, papers, and the people who ship models.",
+      "x_queries": ["artificial intelligence", "AI models LLM"],
+      "x_accounts": ["karpathy", "sama", "simonw", "AnthropicAI", "OpenAI", "GoogleDeepMind", "xai", "ylecun", "AndrewYNg", "demishassabis", "huggingface", "emollick", "DrJimFan", "claudeai", "grok"],
+      "feeds": [
+        {"id": "openai", "name": "OpenAI News", "type": "rss", "url": "https://openai.com/news/rss.xml", "description": "Product and research posts from OpenAI."},
+        {"id": "googleai", "name": "Google AI Blog", "type": "rss", "url": "https://blog.google/technology/ai/rss/", "description": "Google's AI blog."},
+        {"id": "simonw", "name": "Simon Willison", "type": "rss", "url": "https://simonwillison.net/atom/everything/", "description": "Notes, tools, and link blog on LLMs and data."},
+        {"id": "hfpapers", "name": "Hugging Face Papers", "type": "hf_papers", "url": "https://huggingface.co/api/daily_papers", "description": "Daily papers with community upvotes."},
+        {"id": "arxiv", "name": "arXiv cs.AI", "type": "rss", "url": "https://rss.arxiv.org/rss/cs.AI", "limit": 15, "description": "New cs.AI preprints."},
+        {"id": "arxiv-lg", "name": "arXiv cs.LG", "type": "rss", "url": "https://rss.arxiv.org/rss/cs.LG", "limit": 15, "description": "Machine learning preprints."},
+        {"id": "arxiv-cl", "name": "arXiv cs.CL", "type": "rss", "url": "https://rss.arxiv.org/rss/cs.CL", "limit": 15, "description": "Computation and language preprints."},
+        {"id": "hfblog", "name": "Hugging Face Blog", "type": "rss", "url": "https://huggingface.co/blog/feed.xml", "description": "Models, datasets, and library posts."}
+      ]
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "blurb": "The daily tech press.",
+      "x_queries": ["technology"],
+      "x_accounts": ["verge", "wired", "techcrunch", "arstechnica"],
+      "feeds": [
+        {"id": "techcrunch", "name": "TechCrunch", "type": "rss", "url": "https://techcrunch.com/feed/", "description": "Startups and technology news."},
+        {"id": "verge", "name": "The Verge", "type": "rss", "url": "https://www.theverge.com/rss/index.xml", "description": "Technology, science, and culture."},
+        {"id": "ars", "name": "Ars Technica", "type": "rss", "url": "https://feeds.arstechnica.com/arstechnica/index", "description": "Technical reporting."},
+        {"id": "wired", "name": "Wired", "type": "rss", "url": "https://www.wired.com/feed/rss", "description": "Wired magazine."},
+        {"id": "mittr", "name": "MIT Technology Review", "type": "rss", "url": "https://www.technologyreview.com/feed/", "description": "Technology Review."},
+        {"id": "bbgtech", "name": "Bloomberg Technology", "type": "rss", "url": "https://feeds.bloomberg.com/technology/news.rss", "description": "Bloomberg's technology wire."},
+        {"id": "cnbctech", "name": "CNBC Tech", "type": "rss", "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html", "description": "CNBC technology headlines."},
+        {"id": "guardian-tech", "name": "The Guardian Technology", "type": "rss", "url": "https://www.theguardian.com/technology/rss", "description": "Guardian technology section."}
+      ]
+    },
+    {
+      "id": "coding",
+      "name": "Coding",
+      "blurb": "Hacker News, forums, changelogs, and language blogs.",
+      "x_queries": ["software developers programming coding"],
+      "x_accounts": ["ThePrimeagen", "mitchellh", "dhh", "t3dotgg", "github", "rauchg", "amasad", "cursor_ai"],
+      "feeds": [
+        {"id": "hn", "name": "Hacker News", "type": "hn", "url": "https://hacker-news.firebaseio.com/v0/topstories.json", "limit": 30, "description": "Front page of Hacker News."},
+        {"id": "lobsters", "name": "Lobsters", "type": "lobsters", "url": "https://lobste.rs/hottest.json", "description": "Computing link forum, hottest first."},
+        {"id": "ghtrending", "name": "GitHub Trending", "type": "rss", "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", "limit": 15, "description": "Daily trending repositories."},
+        {"id": "githubblog", "name": "The GitHub Blog", "type": "rss", "url": "https://github.blog/feed/", "description": "GitHub product and engineering posts."},
+        {"id": "changelog", "name": "Changelog", "type": "rss", "url": "https://changelog.com/feed", "description": "Podcasts and developer news."},
+        {"id": "lwn", "name": "LWN.net", "type": "rss", "url": "https://lwn.net/headlines/rss", "description": "Linux and free-software reporting."},
+        {"id": "rust", "name": "Rust Blog", "type": "rss", "url": "https://blog.rust-lang.org/feed.xml", "description": "Official Rust announcements."},
+        {"id": "golang", "name": "Go Blog", "type": "rss", "url": "https://go.dev/blog/feed.atom", "description": "The Go programming language blog."}
+      ]
+    },
+    {
+      "id": "startups",
+      "name": "Startups & business",
+      "blurb": "Funding, company news, and operators.",
+      "x_queries": ["startups funding venture capital"],
+      "x_accounts": ["paulg", "levelsio", "garrytan", "ycombinator", "naval", "pmarca", "balajis", "patrickc"],
+      "feeds": [
+        {"id": "tc-startups", "name": "TechCrunch Startups", "type": "rss", "url": "https://techcrunch.com/category/startups/feed/", "description": "TechCrunch's startups section."},
+        {"id": "yc", "name": "Y Combinator Blog", "type": "rss", "url": "https://www.ycombinator.com/blog/rss/", "description": "Essays and company news from YC."},
+        {"id": "a16z", "name": "Andreessen Horowitz", "type": "rss", "url": "https://a16z.com/feed/", "description": "a16z essays and announcements."}
+      ]
+    },
+    {
+      "id": "markets",
+      "name": "Markets",
+      "blurb": "Business wires and market headlines.",
+      "x_queries": ["markets stocks business earnings"],
+      "x_accounts": ["markets", "FT", "business"],
+      "feeds": [
+        {"id": "bbgmarkets", "name": "Bloomberg Markets", "type": "rss", "url": "https://feeds.bloomberg.com/markets/news.rss", "description": "Bloomberg markets wire."},
+        {"id": "cnbcbiz", "name": "CNBC Business", "type": "rss", "url": "https://www.cnbc.com/id/10001147/device/rss/rss.html", "description": "CNBC business headlines."},
+        {"id": "ft", "name": "Financial Times", "type": "rss", "url": "https://www.ft.com/technology?format=rss", "description": "FT technology. Swap the path for another FT section if you prefer."},
+        {"id": "ft-markets", "name": "Financial Times Markets", "type": "rss", "url": "https://www.ft.com/markets?format=rss", "description": "FT markets."},
+        {"id": "marketwatch", "name": "MarketWatch", "type": "rss", "url": "https://feeds.marketwatch.com/marketwatch/topstories/", "description": "MarketWatch top stories."}
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "blurb": "Research news beyond the AI preprint firehose.",
+      "x_queries": ["scientific discovery research"],
+      "x_accounts": ["Nature", "NASA", "sciam"],
+      "feeds": [
+        {"id": "quanta", "name": "Quanta Magazine", "type": "rss", "url": "https://www.quantamagazine.org/feed/", "description": "Math, physics, biology, and computer science features."},
+        {"id": "nature", "name": "Nature", "type": "rss", "url": "https://www.nature.com/nature.rss", "description": "Nature journal."},
+        {"id": "nasa", "name": "NASA", "type": "rss", "url": "https://www.nasa.gov/feed/", "description": "NASA news."},
+        {"id": "physorg", "name": "Phys.org", "type": "rss", "url": "https://phys.org/rss-feed/", "description": "Research news briefs."},
+        {"id": "sciam", "name": "Scientific American", "type": "rss", "url": "https://www.scientificamerican.com/platform/syndication/rss/", "description": "Scientific American."}
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "blurb": "Product design, typography, architecture, and the front end.",
+      "x_queries": ["design typography product design"],
+      "x_accounts": ["smashingmag", "css", "dezeen"],
+      "feeds": [
+        {"id": "smashing", "name": "Smashing Magazine", "type": "rss", "url": "https://www.smashingmagazine.com/feed/", "description": "Front-end and design articles."},
+        {"id": "css-tricks", "name": "CSS-Tricks", "type": "rss", "url": "https://css-tricks.com/feed/", "description": "CSS and front-end notes."},
+        {"id": "dezeen", "name": "Dezeen", "type": "rss", "url": "https://www.dezeen.com/feed/", "description": "Architecture and design."},
+        {"id": "alistapart", "name": "A List Apart", "type": "rss", "url": "https://alistapart.com/main/feed/", "description": "Web design and content strategy."},
+        {"id": "itsnicethat", "name": "It's Nice That", "type": "rss", "url": "https://www.itsnicethat.com/feed", "description": "Graphic arts and illustration."}
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "blurb": "Incident reporting and security research.",
+      "x_queries": ["cybersecurity vulnerability breach"],
+      "x_accounts": ["briankrebs", "schneierblog", "campuscodi"],
+      "feeds": [
+        {"id": "krebs", "name": "Krebs on Security", "type": "rss", "url": "https://krebsonsecurity.com/feed/", "description": "Investigative security reporting."},
+        {"id": "schneier", "name": "Schneier on Security", "type": "rss", "url": "https://www.schneier.com/feed/atom/", "description": "Bruce Schneier's security blog."},
+        {"id": "thn", "name": "The Hacker News", "type": "rss", "url": "https://feeds.feedburner.com/TheHackersNews", "description": "Security headlines."},
+        {"id": "bleeping", "name": "BleepingComputer", "type": "rss", "url": "https://www.bleepingcomputer.com/feed/", "description": "Malware and outage reporting."}
+      ]
+    },
+    {
+      "id": "world",
+      "name": "World news",
+      "blurb": "A short wire of general news, if the paper should not be tech-only.",
+      "x_queries": ["world news"],
+      "x_accounts": ["BBCWorld", "NPR"],
+      "feeds": [
+        {"id": "bbc", "name": "BBC News", "type": "rss", "url": "https://feeds.bbci.co.uk/news/rss.xml", "description": "BBC top stories."},
+        {"id": "npr", "name": "NPR News", "type": "rss", "url": "https://feeds.npr.org/1001/rss.xml", "description": "NPR news."},
+        {"id": "guardian-world", "name": "The Guardian World", "type": "rss", "url": "https://www.theguardian.com/world/rss", "description": "Guardian world news."}
+      ]
+    }
+  ]
+}
