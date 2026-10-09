@@ -1,0 +1,109 @@
+{
+  "_example": true,
+  "fetched_at": "-8m",
+  "weather": {
+    "ok": true
+  },
+  "feeds": {
+    "hn": {
+      "ok": true,
+      "count": 12,
+      "example": true
+    },
+    "ars": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "bbgtech": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "techcrunch": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "verge": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "wired": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "mittr": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "simonw": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "openai": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "googleai": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "hfpapers": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "arxiv": {
+      "ok": true,
+      "count": 4,
+      "example": true
+    },
+    "lobsters": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "ghtrending": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "githubblog": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "changelog": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "bbgmarkets": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "cnbctech": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "cnbcbiz": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    },
+    "ft": {
+      "ok": true,
+      "count": 3,
+      "example": true
+    }
+  }
+}

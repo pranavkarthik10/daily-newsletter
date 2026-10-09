@@ -1,0 +1,101 @@
+{
+  "_readme": "Enabled edition. Ignored keys start with _. Suggestions live in config/catalog.json. Schemas: docs/SCHEMAS.md. The bot rewrites this file during setup; the default is a public tech morning paper with private sections off.",
+  "paper": {
+    "name": "The Morning Tab",
+    "tagline": "All the news that fits your history.",
+    "edition": "Morning Edition",
+    "reader": "Reader",
+    "founded": "2026-10-08",
+    "volume": "I",
+    "timezone": "America/New_York",
+    "location": {"name": "New York", "lat": 40.7128, "lon": -74.006},
+    "search": "https://www.google.com/search"
+  },
+  "routine": {
+    "time": "06:30",
+    "_doc": "Local time in paper.timezone. The bot registers a daily routine at this time. Nothing in this repo runs on a clock by itself."
+  },
+  "deploy": {
+    "target": "static",
+    "project_name": "daily-newsletter",
+    "github_pages_branch": "gh-pages"
+  },
+  "front": {
+    "lead_topic": "ai",
+    "wires": ["ars", "bbgtech", "techcrunch", "verge"],
+    "brief_topics": [
+      {"topic": "business", "label": "Business"},
+      {"topic": "coding", "label": "Coding"},
+      {"topic": "tech", "label": "Technology"}
+    ]
+  },
+  "feeds": [
+    {"id": "hn", "name": "Hacker News", "type": "hn", "url": "https://hacker-news.firebaseio.com/v0/topstories.json", "limit": 30},
+    {"id": "techcrunch", "name": "TechCrunch", "type": "rss", "url": "https://techcrunch.com/feed/"},
+    {"id": "verge", "name": "The Verge", "type": "rss", "url": "https://www.theverge.com/rss/index.xml"},
+    {"id": "ars", "name": "Ars Technica", "type": "rss", "url": "https://feeds.arstechnica.com/arstechnica/index"},
+    {"id": "wired", "name": "Wired", "type": "rss", "url": "https://www.wired.com/feed/rss"},
+    {"id": "mittr", "name": "MIT Technology Review", "type": "rss", "url": "https://www.technologyreview.com/feed/"},
+    {"id": "simonw", "name": "Simon Willison", "type": "rss", "url": "https://simonwillison.net/atom/everything/"},
+    {"id": "openai", "name": "OpenAI News", "type": "rss", "url": "https://openai.com/news/rss.xml"},
+    {"id": "googleai", "name": "Google AI Blog", "type": "rss", "url": "https://blog.google/technology/ai/rss/"},
+    {"id": "hfpapers", "name": "Hugging Face Papers", "type": "hf_papers", "url": "https://huggingface.co/api/daily_papers"},
+    {"id": "arxiv", "name": "arXiv cs.AI", "type": "rss", "url": "https://rss.arxiv.org/rss/cs.AI", "limit": 15},
+    {"id": "lobsters", "name": "Lobsters", "type": "lobsters", "url": "https://lobste.rs/hottest.json"},
+    {"id": "ghtrending", "name": "GitHub Trending", "type": "rss", "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", "limit": 15},
+    {"id": "githubblog", "name": "The GitHub Blog", "type": "rss", "url": "https://github.blog/feed/"},
+    {"id": "changelog", "name": "Changelog", "type": "rss", "url": "https://changelog.com/feed"},
+    {"id": "bbgtech", "name": "Bloomberg Technology", "type": "rss", "url": "https://feeds.bloomberg.com/technology/news.rss"},
+    {"id": "bbgmarkets", "name": "Bloomberg Markets", "type": "rss", "url": "https://feeds.bloomberg.com/markets/news.rss"},
+    {"id": "cnbctech", "name": "CNBC Tech", "type": "rss", "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html"},
+    {"id": "cnbcbiz", "name": "CNBC Business", "type": "rss", "url": "https://www.cnbc.com/id/10001147/device/rss/rss.html"},
+    {"id": "ft", "name": "Financial Times", "type": "rss", "url": "https://www.ft.com/technology?format=rss"}
+  ],
+  "sections": [
+    {"id": "hn", "kicker": "Hacker News", "title": "The Front Page", "kind": "hn", "feeds": ["hn"], "show": 10, "max": 30},
+    {"id": "x-ai", "kicker": "Artificial Intelligence", "title": "What X Is Talking About", "kind": "x_news", "topic": "ai", "queries": ["artificial intelligence", "AI models LLM"], "show": 5, "max": 15},
+    {"id": "x-voices", "kicker": "Voices", "title": "Overheard on X", "kind": "x_posts", "accounts": ["karpathy", "sama", "simonw", "AnthropicAI", "OpenAI", "GoogleDeepMind", "ylecun", "AndrewYNg", "huggingface", "emollick", "claudeai", "grok", "paulg", "levelsio", "rauchg", "github", "cursor_ai"], "show": 6, "max": 20, "per_handle": 3},
+    {"id": "tech", "kicker": "Technology", "title": "From the Tech Press", "kind": "feeds", "feeds": ["techcrunch", "verge", "ars", "wired", "mittr"], "per_feed": 6, "show": 8, "max": 30},
+    {"id": "ai", "kicker": "AI & Research", "title": "Labs, Papers & Notebooks", "kind": "feeds", "feeds": ["simonw", "openai", "googleai", "hfpapers"], "per_feed": 6, "show": 8, "max": 24},
+    {"id": "x-code", "kicker": "Coding", "title": "The Developer Desk on X", "kind": "x_news", "topic": "coding", "queries": ["software developers programming coding"], "show": 5, "max": 15},
+    {"id": "code", "kicker": "Coding", "title": "Lobsters, Trending & Changelogs", "kind": "feeds", "feeds": ["lobsters", "ghtrending", "githubblog", "changelog"], "per_feed": 6, "show": 8, "max": 24},
+    {"id": "x-biz", "kicker": "Business & Startups", "title": "Deals & Dealmakers on X", "kind": "x_news", "topic": "business", "queries": ["startups funding business markets"], "show": 5, "max": 15},
+    {"id": "biz", "kicker": "Business & Markets", "title": "Markets & Money", "kind": "feeds", "feeds": ["bbgtech", "bbgmarkets", "cnbctech", "cnbcbiz", "ft"], "per_feed": 6, "show": 8, "max": 30},
+    {"id": "x-tech", "kicker": "Technology", "title": "Tech Chatter on X", "kind": "x_news", "topic": "tech", "queries": ["technology"], "show": 5, "max": 15},
+    {"id": "arxiv", "kicker": "Research", "title": "New on arXiv (cs.AI)", "kind": "feeds", "feeds": ["arxiv"], "per_feed": 15, "show": 5, "max": 15}
+  ],
+  "private_sections": [
+    {
+      "id": "calendar",
+      "enabled": false,
+      "kind": "calendar",
+      "placement": "sidebar",
+      "kicker": "Schedule",
+      "title": "Your Day",
+      "provider": "google",
+      "_doc": "Set enabled true only after a calendar connector works. provider is google or outlook. Writes data/calendar.json."
+    },
+    {
+      "id": "email",
+      "enabled": false,
+      "kind": "email",
+      "placement": "sidebar",
+      "kicker": "Correspondence",
+      "title": "Correspondence",
+      "provider": "gmail",
+      "show": 6,
+      "max": 8,
+      "_doc": "Important unread mail. provider is gmail or outlook. Writes data/email.json."
+    },
+    {
+      "id": "notebook",
+      "enabled": false,
+      "kind": "items",
+      "placement": "section",
+      "kicker": "Notes",
+      "title": "From Your Notes",
+      "data": "sections/notebook.json",
+      "_doc": "Extension point. Copy this object, change id/title, point data at sections/<id>.json, and fill that file from any connector. See docs/SCHEMAS.md."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "_example": true,
+  "updated_at": "-5m",
+  "news": {
+    "ai": [
+      {
+        "title": "Executives at OpenAI and Anthropic privately prepare for potential catastrophic AI incident",
+        "summary": "Executives at OpenAI, Anthropic, and other AI companies are privately planning for a major AI-related incident such as a cyberattack disrupting banking, internet, power, or water infrastructure, according to an Axios report. Insiders anticipate such an event within 6 to 12 months, prompting preparations for public backlash and potential regulatory calls. The discussions involve scenario planning for fallout from AI misuse or failures.",
+        "url": "https://example.com/example/ai-incident",
+        "updated_at": "-5m",
+        "topics": [
+          "Technology",
+          "AI"
+        ],
+        "category": "News"
+      },
+      {
+        "title": "Labs sketch what a public incident report should contain",
+        "summary": "Example dispatch for the offline preview.",
+        "url": "https://example.com/example/ai-report",
+        "updated_at": "-2h",
+        "topics": [
+          "AI"
+        ]
+      },
+      {
+        "title": "A morning note on evals that fail in public",
+        "summary": "Example dispatch for the offline preview.",
+        "url": "https://example.com/example/ai-evals",
+        "updated_at": "-6h",
+        "topics": [
+          "AI"
+        ]
+      }
+    ],
+    "business": [
+      {
+        "title": "TypeSafe AI Raises a round for safer compilers",
+        "summary": "A compiler startup raises to put more of the checking in the tool.",
+        "url": "https://example.com/example/typesafe",
+        "updated_at": "-1h",
+        "topics": [
+          "Business"
+        ]
+      },
+      {
+        "title": "A second look at the week's term sheets",
+        "summary": "Example dispatch for the offline preview.",
+        "url": "https://example.com/example/terms",
+        "updated_at": "-5h",
+        "topics": [
+          "Business"
+        ]
+      }
+    ],
+    "coding": [
+      {
+        "title": "Deno team on the Cloudflare acquisition",
+        "summary": "The team writes down what they think changes for people who ship on the runtime.",
+        "url": "https://example.com/example/deno-team",
+        "updated_at": "-2h",
+        "topics": [
+          "Coding"
+        ]
+      },
+      {
+        "title": "What the runtime changes for people who ship on Fridays",
+        "summary": "Example dispatch for the offline preview.",
+        "url": "https://example.com/example/fridays",
+        "updated_at": "-7h",
+        "topics": [
+          "Coding"
+        ]
+      }
+    ],
+    "tech": [
+      {
+        "title": "Discussion on agent browsers and the new wires",
+        "summary": "Where an agent belongs on the page, and what the wires should still do by hand.",
+        "url": "https://example.com/example/agent-browsers",
+        "updated_at": "-90m",
+        "topics": [
+          "Technology"
+        ]
+      },
+      {
+        "title": "The tab that reads the morning so you don't have to scroll it",
+        "summary": "Example dispatch for the offline preview.",
+        "url": "https://example.com/example/tab",
+        "updated_at": "-4h",
+        "topics": [
+          "Technology"
+        ]
+      }
+    ]
+  },
+  "posts": [
+    {
+      "text": "The morning edition is a place to notice what changed overnight, not a place to scroll. Example post for the preview.",
+      "author": "Sample Voice",
+      "handle": "samplevoice",
+      "likes": 2400,
+      "reposts": 310,
+      "created_at": "-1h",
+      "url": "https://example.com/example/post/1"
+    },
+    {
+      "text": "Ship the boring page. Keep the secret path off the commit. Example post for the preview.",
+      "author": "Desk Example",
+      "handle": "deskexample",
+      "likes": 980,
+      "reposts": 120,
+      "created_at": "-2h",
+      "url": "https://example.com/example/post/2"
+    },
+    {
+      "text": "A good newspaper names its sources and leaves the rest of the day alone. Example post for the preview.",
+      "author": "Wire Editor",
+      "handle": "wireeditor",
+      "likes": 1500,
+      "reposts": 88,
+      "created_at": "-3h",
+      "url": "https://example.com/example/post/3"
+    },
+    {
+      "text": "Fonts on the page, not from a third party. The press should not phone home. Example post for the preview.",
+      "author": "Sample Voice",
+      "handle": "samplevoice",
+      "likes": 640,
+      "reposts": 40,
+      "created_at": "-5h",
+      "url": "https://example.com/example/post/4"
+    },
+    {
+      "text": "If the calendar box is empty, that is also news: an open day. Example post for the preview.",
+      "author": "Ada Example",
+      "handle": "adaexample",
+      "likes": 420,
+      "reposts": 22,
+      "created_at": "-8h",
+      "url": "https://example.com/example/post/5"
+    },
+    {
+      "text": "Read the wires, then close the tab. Example post for the preview.",
+      "author": "Lin Example",
+      "handle": "linexample",
+      "likes": 2100,
+      "reposts": 260,
+      "created_at": "-30m",
+      "url": "https://example.com/example/post/6"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "_example": true,
+  "updated_at": "-10m",
+  "ok": true,
+  "provider": "gmail",
+  "messages": [
+    {
+      "subject": "Example: Galley proofs",
+      "from": "Ada Example",
+      "from_email": "ada@example.com",
+      "snippet": "The morning galleys are on the desk.",
+      "date": "-20m",
+      "link": "https://example.com/mail/1",
+      "unread": true,
+      "important": true
+    },
+    {
+      "subject": "Example: A note from the wire desk",
+      "from": "News Editor",
+      "from_email": "editor@example.com",
+      "snippet": "Three items worth a column, nothing urgent.",
+      "date": "-2h",
+      "link": "https://example.com/mail/2",
+      "unread": true,
+      "important": false
+    }
+  ]
+}

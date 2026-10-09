@@ -1,0 +1,22 @@
+# Live fetch, connector payloads, and built sites. Sample data is the exception.
+/data/*
+!/data/sample/
+!/data/sample/**
+/dist/
+
+# Generated once, when a private section is enabled. The path is the only access control.
+.secret_path
+.access_key
+
+# Local environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+node_modules/
+logs/
+.pinggy_token
+.DS_Store
+*.log
