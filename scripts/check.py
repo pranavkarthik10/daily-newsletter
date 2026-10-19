@@ -35,9 +35,26 @@ def main():
             fail("public build created a secret file")
         index = Path(publish["output"]) / "index.html"
         text = index.read_text(encoding="utf-8")
-        for needle in ("The Morning Tab", "Executives at OpenAI", "Cloudflare acquires", "Printed for Reader", "The Almanac", "Inside Today"):
+        for needle in ("The Daily Diff", "What changed since yesterday.", "Executives at OpenAI", "Cloudflare acquires", "Printed for Reader", "The Almanac", "Inside Today", "The Daily Diff — "):
             if needle not in text:
                 fail(f"sample page missing {needle!r}")
+        if "The Morning Tab" in text or "All the news that fits your history." in text:
+            fail("sample page still uses the old masthead")
+        if "%3ED%3C" not in text:
+            fail("sample favicon should be D, the first significant letter of The Daily Diff")
+        css = (Path(publish["output"]) / "style.css").read_text(encoding="utf-8")
+        if "text-wrap:balance" not in css.replace(" ", ""):
+            fail("masthead title is missing text-wrap: balance")
+        letters = {
+            "The Daily Diff": "D",
+            "An Evening Post": "E",
+            "A Gazette": "G",
+            "Gazette": "G",
+            "The": "T",
+        }
+        for paper_name, letter in letters.items():
+            if build.masthead_letter(paper_name) != letter:
+                fail(f"masthead letter for {paper_name!r}")
         if "noindex" in text:
             fail("public sample page should be indexable")
         if "example content" not in text:

@@ -2,9 +2,9 @@
 
 A newspaper-styled browser start page. A [Grok Bot](BOT_SETUP.md) builds it every morning from public wires and, if you ask, from your calendar and mail, then deploys a static site to whatever host you pick.
 
-The default masthead is **The Morning Tab**. The name, tagline, the “Printed for” line, the city, and the timezone are all config.
+The default masthead is **The Daily Diff**, with the tagline “What changed since yesterday.” The name, tagline, the “Printed for” line, the city, and the timezone are all config. The browser tab icon is the first letter of the name, skipping a leading The, A, or An.
 
-![The Morning Tab sample edition](docs/screenshot.png)
+![The Daily Diff sample edition](docs/screenshot.png)
 
 **With a Grok Bot:** “Set me up from https://github.com/pranavkarthik10/daily-newsletter and follow BOT_SETUP.md.”
 

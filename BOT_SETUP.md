@@ -8,8 +8,8 @@ The paper is a static site. You fetch public sources, write connector JSON, buil
 
 Ask **one question at a time**. Offer a suggestion, accept a short answer, then go on. Skip ahead if they already answered.
 
-1. **Name.** What should the masthead say? Suggest **The Morning Tab**.
-2. **Tagline.** Suggest **All the news that fits your history.**
+1. **Name.** What should the masthead say? Suggest **The Daily Diff**.
+2. **Tagline.** Suggest **What changed since yesterday.**
 3. **Reader line.** The corner says “Printed for ___.” Ask what name to print. Suggest their first name. This is a label, not a login.
 4. **City.** Where is the weather desk? Run `python3 scripts/geocode.py "City"` and confirm the place, latitude, longitude, and timezone before writing them into `paper.location` and `paper.timezone`.
 5. **Interests.** Read `config/catalog.json`. Name the groups (AI, technology, coding, startups, markets, science, design, security, world news) and ask which ones they want. They can say “the demo” to keep the default tech paper.
@@ -42,7 +42,7 @@ If they want their own git history, create a **new** repo and point `origin` at 
 
 Write `newsletter.config.json`:
 
-- `paper`: name, tagline, reader, timezone, location, `founded` set to today's date, `edition` “Morning Edition”.
+- `paper`: name, tagline, reader, timezone, location, `founded` set to today's date, `edition` “Morning Edition”. The browser tab icon is the first significant letter of the name (a leading The, A, or An is skipped), so The Daily Diff shows D.
 - `feeds`: only what they chose. Copy objects from `config/catalog.json` or keep defaults they liked.
 - `sections`: one block per desk. `kind` is `hn`, `feeds`, `x_news`, `x_posts`, or `items`. Match the shapes already in the file.
 - `private_sections`: leave entries in the file. Set `enabled` true only for the ones they asked for and you could read.

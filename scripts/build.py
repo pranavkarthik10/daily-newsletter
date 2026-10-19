@@ -13,6 +13,7 @@ import re
 import shutil
 import sys
 from pathlib import Path
+from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -184,6 +185,17 @@ def weather_bits(W, now):
     except Exception as ex:
         print(f"warning: weather data unusable ({ex})", file=sys.stderr)
         return None
+
+_LEADING_ARTICLE = re.compile(r"^(?:the|an|a)(?=\s+)", re.IGNORECASE)
+
+def masthead_letter(name):
+    """First significant letter of the paper name. A leading The, A, or An is skipped."""
+    text = (name or "").strip()
+    significant = _LEADING_ARTICLE.sub("", text, count=1).strip() or text
+    for ch in significant:
+        if ch.isalnum():
+            return ch.upper()
+    return "D"
 
 def issue_number(cfg, today):
     raw = (cfg.get("paper") or {}).get("founded")
@@ -741,7 +753,8 @@ class Edition:
     def page(self, private):
         wb = weather_bits(self.weather, self.now)
         P = self.paper
-        name = P.get("name") or "The Morning Tab"
+        name = P.get("name") or "The Daily Diff"
+        letter = quote(masthead_letter(name), safe="")
         no = issue_number(self.cfg, self.now.date())
         vol = P.get("volume") or "I"
         reader = (P.get("reader") or "").strip()
@@ -780,7 +793,7 @@ class Edition:
 <html lang="en"><head>{comment}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>
 {robots}{referrer}
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f3efe6'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-weight='700' font-size='44' text-anchor='middle' fill='%231b1a17'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f3efe6'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-weight='700' font-size='44' text-anchor='middle' fill='%231b1a17'%3E{letter}%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css"><link rel="stylesheet" href="style.css?v={css}">
 </head><body><div class="paper">
 <header class="mast">

@@ -1,8 +1,8 @@
 {
   "_readme": "Enabled edition. Ignored keys start with _. Suggestions live in config/catalog.json. Schemas: docs/SCHEMAS.md. The bot rewrites this file during setup; the default is a public tech morning paper with private sections off.",
   "paper": {
-    "name": "The Morning Tab",
-    "tagline": "All the news that fits your history.",
+    "name": "The Daily Diff",
+    "tagline": "What changed since yesterday.",
     "edition": "Morning Edition",
     "reader": "Reader",
     "founded": "2026-10-08",

@@ -61,7 +61,7 @@ def validate(cfg):
     warns = []
     paper = cfg.get("paper") or {}
     if not paper.get("name"):
-        warns.append("paper.name is empty; the masthead will fall back to The Morning Tab")
+        warns.append("paper.name is empty; the masthead will fall back to The Daily Diff")
     if not paper.get("timezone"):
         warns.append("paper.timezone is missing; times will use UTC")
     loc = paper.get("location") or {}
