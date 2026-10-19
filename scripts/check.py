@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Offline checks: sample edition, secret path, and connector ingest. No network."""
+import datetime as dt
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import common
@@ -62,6 +65,40 @@ def main():
         for word in BANNED:
             if word in text:
                 fail(f"sample page contains {word!r}")
+        built_at = dt.datetime.fromisoformat(publish["built_at"]).astimezone(ZoneInfo("America/New_York"))
+        foot = text.split("<footer", 1)[-1]
+        expected_built = "Built " + build.fmt_local(built_at, built_at.tzinfo, with_zone=True)
+        if expected_built not in foot:
+            fail(f"sample footer missing {expected_built!r}")
+        if re.search(r"\bET\b", foot):
+            fail("footer hardcodes ET")
+        # A UTC instant that is still the previous evening in Los Angeles must
+        # date the paper, the issue number, and the built stamp in that zone.
+        pacific = json.loads((ROOT / "newsletter.config.json").read_text(encoding="utf-8"))
+        pacific["paper"]["timezone"] = "America/Los_Angeles"
+        pacific_path = tmp / "pacific.config.json"
+        pacific_path.write_text(json.dumps(pacific), encoding="utf-8")
+        os.environ["NEWSLETTER_CONFIG"] = str(pacific_path)
+        os.environ["NEWSLETTER_DIST"] = str(tmp / "dist-pacific")
+        afternoon = dt.datetime(2026, 10, 19, 23, 0, tzinfo=dt.timezone.utc)
+        pac = build.build_site(sample=True, config_path=pacific_path, now=afternoon)
+        pac_html = (Path(pac["output"]) / "index.html").read_text(encoding="utf-8")
+        for needle in ("Monday, October 19, 2026", "The Daily Diff — Mon Oct 19", "Built Oct 19, 4:00 PM PDT", "No. 12"):
+            if needle not in pac_html:
+                fail(f"Pacific afternoon edition missing {needle!r}")
+        if re.search(r"\bET\b", pac_html.split("<footer", 1)[-1]):
+            fail("Pacific footer hardcodes ET")
+        evening = dt.datetime(2026, 10, 19, 6, 30, tzinfo=dt.timezone.utc)
+        eve = build.build_site(sample=True, config_path=pacific_path, now=evening)
+        eve_html = (Path(eve["output"]) / "index.html").read_text(encoding="utf-8")
+        for needle in ("Sunday, October 18, 2026", "The Daily Diff — Sun Oct 18", "Built Oct 18, 11:30 PM PDT", "No. 11"):
+            if needle not in eve_html:
+                fail(f"Pacific evening edition missing {needle!r}")
+        winter = dt.datetime(2026, 1, 15, 16, 0, tzinfo=ZoneInfo("America/Los_Angeles"))
+        win = build.build_site(sample=True, config_path=pacific_path, now=winter)
+        win_html = (Path(win["output"]) / "index.html").read_text(encoding="utf-8")
+        if "Built Jan 15, 4:00 PM PST" not in win_html or "Thursday, January 15, 2026" not in win_html:
+            fail("Pacific standard time should label the built stamp PST")
         # Private edition: blank root, paper only under the secret path, stable key.
         cfg = json.loads((ROOT / "newsletter.config.json").read_text(encoding="utf-8"))
         for sec in cfg.get("private_sections") or []:

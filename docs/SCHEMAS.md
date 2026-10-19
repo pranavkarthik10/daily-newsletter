@@ -2,7 +2,7 @@
 
 The build never calls a connector. It reads JSON from `data/` and renders it. Write these files yourself, or let `scripts/ingest.py` reshape a raw connector response into them.
 
-Unknown keys are ignored. Times are ISO-8601 (`2026-10-09T15:00:00-04:00` or `...Z`). The sample edition also accepts relative times (`-5m`, `-2h`, `+1d`) so a preview stays current; ingest always writes ISO-8601.
+Unknown keys are ignored. Times are ISO-8601 (`2026-10-09T15:00:00-04:00` or `...Z`). The build shows every clock and the issue date in `paper.timezone`, including the abbreviation on the built time. The sample edition also accepts relative times (`-5m`, `-2h`, `+1d`) so a preview stays current; ingest always writes ISO-8601.
 
 If a file is missing, or `"ok": false`, the section shows an empty state and the rest of the paper still builds.
 

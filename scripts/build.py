@@ -63,6 +63,28 @@ def fmt_stamp(d):
     am = "AM" if d.hour < 12 else "PM"
     return d.strftime("%b ") + str(d.day) + f", {h}:{d.minute:02d} {am}"
 
+def in_zone(d, tz):
+    """Wall clock in the paper's timezone. Naive values are already that clock."""
+    if d is None or tz is None:
+        return d
+    if d.tzinfo is None:
+        return d.replace(tzinfo=tz)
+    return d.astimezone(tz)
+
+def zone_abbrev(d):
+    """The zone's own abbreviation, such as PDT or JST. Never a fixed label."""
+    if d is None or d.tzinfo is None:
+        return ""
+    return d.tzname() or ""
+
+def fmt_local(d, tz, with_zone=False):
+    d = in_zone(d, tz)
+    stamp = fmt_stamp(d)
+    if not with_zone or not d:
+        return stamp
+    abbr = zone_abbrev(d)
+    return f"{stamp} {abbr}".strip() if abbr else stamp
+
 def k(n):
     n = n or 0
     try:
@@ -163,8 +185,8 @@ def weather_bits(W, now):
         line = f"{cond} and {temp}°, high {hi}°, low {lo}°"
         if isinstance(rain, (int, float)) and rain >= 30:
             line += f", {int(rain)}% chance of rain"
-        sr = dt.datetime.fromisoformat(d["sunrise"][i])
-        ss = dt.datetime.fromisoformat(d["sunset"][i])
+        sr = in_zone(dt.datetime.fromisoformat(d["sunrise"][i]), now.tzinfo)
+        ss = in_zone(dt.datetime.fromisoformat(d["sunset"][i]), now.tzinfo)
         dl = (d.get("daylight_duration") or [0])[i] / 3600
         fc = []
         times = d["time"]
@@ -301,12 +323,12 @@ class Edition:
         if ev.get("all_day") or not self.ts(ev.get("start")):
             t, attrs = "all day", ""
         else:
-            s = self.ts(ev["start"]).astimezone(self.now.tzinfo)
+            s = in_zone(self.ts(ev["start"]), self.now.tzinfo)
             en = self.ts(ev.get("end"))
             t = clock(s)
             attrs = f' data-start="{int(s.timestamp()*1000)}"'
             if en:
-                en = en.astimezone(self.now.tzinfo)
+                en = in_zone(en, self.now.tzinfo)
                 attrs += f' data-end="{int(en.timestamp()*1000)}"'
                 tip = f"{clock(s)}–{clock(en)}"
                 if ev.get("location"):
@@ -332,7 +354,7 @@ class Edition:
                 s = self.ts(ev.get("start"))
                 if not s:
                     continue
-                day = s.astimezone(self.now.tzinfo).date()
+                day = in_zone(s, self.now.tzinfo).date()
             if day < self.now.date():
                 continue
             days.setdefault(day, []).append(ev)
@@ -361,7 +383,7 @@ class Edition:
             h.append('<p class="empty small">Nothing scheduled for the rest of the week.</p>')
         updated = self.ts((self.calendar or {}).get("updated_at")) if isinstance(self.calendar, dict) else None
         if updated:
-            h.append(f'<div class="box-foot">Synced {e(fmt_stamp(updated.astimezone(self.now.tzinfo)))}</div>')
+            h.append(f'<div class="box-foot">Synced {e(fmt_local(updated, self.now.tzinfo))}</div>')
         h.append("</section>")
         return "".join(h)
 
@@ -382,15 +404,15 @@ class Edition:
                     who = m.get("from") or m.get("from_email") or ""
                     loc = f'<span class="ev-loc">{e(who)}</span>' if who else ""
                     sub = e(m.get("subject") or "(no subject)")
-                    stamp = self.ts(m.get("date"))
-                    t = clock(stamp.astimezone(self.now.tzinfo)) if stamp else ""
+                    stamp = in_zone(self.ts(m.get("date")), self.now.tzinfo)
+                    t = clock(stamp) if stamp else ""
                     cls = "ev letter" + (" unread" if m.get("unread", True) else "")
                     inner = f'<span class="ev-title">{sub}{loc}</span><span class="ev-time">{e(t)}</span>'
                     rows.append(f'<li class="{cls}">{link(m.get("link"), inner)}</li>')
                 h.append('<ul class="evs">' + "".join(rows) + "</ul>")
         updated = self.ts(mail.get("updated_at")) if isinstance(mail, dict) else None
         if updated:
-            h.append(f'<div class="box-foot">Synced {e(fmt_stamp(updated.astimezone(self.now.tzinfo)))}</div>')
+            h.append(f'<div class="box-foot">Synced {e(fmt_local(updated, self.now.tzinfo))}</div>')
         h.append("</section>")
         return "".join(h)
 
@@ -778,15 +800,15 @@ class Edition:
         tot = len(feeds_status)
         fu = self.ts(self.status.get("fetched_at")) if isinstance(self.status, dict) else None
         xu = self.ts(self.x.get("updated_at")) if isinstance(self.x, dict) else None
+        zone = self.now.tzinfo
         cal_bit = ""
         if any(s.get("kind") == "calendar" for s in private_secs):
             cu = self.ts((self.calendar or {}).get("updated_at")) if isinstance(self.calendar, dict) else None
-            cal_bit = " · Calendar " + e(fmt_stamp(cu.astimezone(self.now.tzinfo) if cu else None))
+            cal_bit = " · Calendar " + e(fmt_local(cu, zone))
         css = int((common.SITE / "style.css").stat().st_mtime_ns) if (common.SITE / "style.css").exists() else 0
         robots = '<meta name="robots" content="noindex,nofollow">' if private else ""
         referrer = '<meta name="referrer" content="no-referrer">' if private else ""
         comment = "<!-- Preview built from example content in data/sample. Not a live edition. -->" if self.example else ""
-        tzname = self.now.tzname() or ""
         weather_line = wb["line"] if wb else "no report"
         title = f"{name} — {self.now.strftime('%a %b ')}{self.now.day}"
         return f'''<!doctype html>
@@ -811,7 +833,7 @@ class Edition:
 <div class="fold-rule"><span>The Rest of the Paper</span></div>
 <div class="sections">{secs}</div>
 <footer class="foot"><div>{e(name)} is set in Playfair Display &amp; Libre Caslon and printed on the Grok Bot press. No ads, no trackers.</div>
-<div>Wires refreshed {e(fmt_stamp(fu.astimezone(self.now.tzinfo) if fu else None))} ({ok}/{tot} sources) · X desk {e(fmt_stamp(xu.astimezone(self.now.tzinfo) if xu else None))}{cal_bit} · Built {e(fmt_stamp(self.now))} {e(tzname)}</div></footer>
+<div>Wires refreshed {e(fmt_local(fu, zone))} ({ok}/{tot} sources) · X desk {e(fmt_local(xu, zone))}{cal_bit} · Built {e(fmt_local(self.now, zone, with_zone=True))}</div></footer>
 </div><script src="app.js?v={css}"></script></body></html>'''
 
 
@@ -858,9 +880,7 @@ def build_site(sample=False, config_path=None, data_path=None, now=None):
         tz = ZoneInfo(tzname)
     except Exception as ex:
         raise SystemExit(f"unknown timezone {tzname!r} ({ex}). Use an IANA name like America/New_York.")
-    now = now or dt.datetime.now(tz)
-    if now.tzinfo is None:
-        now = now.replace(tzinfo=tz)
+    now = in_zone(now or dt.datetime.now(tz), tz)
     data = Path(data_path) if data_path else common.data_dir(sample=sample)
     private_secs = common.enabled_private(cfg)
     private = bool(private_secs)

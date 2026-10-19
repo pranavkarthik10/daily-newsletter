@@ -42,7 +42,7 @@ python3 scripts/preview.py --live
 | --- | --- |
 | `paper.name`, `tagline`, `edition`, `volume` | Masthead. |
 | `paper.reader` | The “Printed for” line. |
-| `paper.timezone` | IANA timezone. Issue date, almanac, and “ago” labels. |
+| `paper.timezone` | IANA timezone. Issue date, almanac, “ago” labels, and the built-time abbreviation (PDT, JST, …). |
 | `paper.location` | `name`, `lat`, `lon` for Open-Meteo. `python3 scripts/geocode.py "City"` fills these in. |
 | `paper.founded` | Issue number one is this date. The bot sets it to the day you start. |
 | `paper.search` | Where the masthead search box submits. Must be `https://`. |
